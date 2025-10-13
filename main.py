@@ -1,13 +1,18 @@
+from logging import Logger
+from setup_logger import setup_logger
+logger: Logger = setup_logger("bot")
+
+import time
+logger.info(f"time sleep 120 seconds...")
+time.sleep(120)
+logger.info(f"time sleep 120 seconds end")
+
 import mimetypes
 import json
 import asyncio
 from telethon import events, TelegramClient
 from telethon.tl.types import PeerUser, MessageMediaPhoto, MessageMediaDocument, DocumentAttributeVideo
 from telethon.tl.patched import Message
-from setup_logger import setup_logger
-from logging import Logger
-
-logger: Logger = setup_logger("bot")
 
 with open('config.json') as f:
     config = json.load(f)
