@@ -1,0 +1,5 @@
+configMy.json
+*.pyc
+/logs
+*.session
+*.session-journal
